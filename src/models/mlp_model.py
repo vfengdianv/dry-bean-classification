@@ -19,6 +19,11 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score
 import numpy as np
 import time
+import warnings
+import os
+
+# Suppress ConvergenceWarning at module level for clean CLI output
+os.environ['PYTHONWARNINGS'] = 'ignore'
 
 
 def train_mlp(X_train, y_train, X_test, y_test,
@@ -55,10 +60,11 @@ def train_mlp(X_train, y_train, X_test, y_test,
         alpha=0.0001,
         batch_size=128,
         learning_rate_init=0.001,
-        max_iter=1,           # One iteration per .fit() call
-        warm_start=True,      # Continue from previous solution
+        max_iter=1,
+        warm_start=True,
         random_state=random_seed,
         early_stopping=False,
+        verbose=False,          # Explicitly disable verbose output
     )
 
     train_losses = []
@@ -72,7 +78,9 @@ def train_mlp(X_train, y_train, X_test, y_test,
         y_shuf = y_train.iloc[idx] if hasattr(y_train, 'iloc') else y_train[idx]
 
         # .fit() with max_iter=1 and warm_start=True = one epoch
-        model.fit(X_shuf, y_shuf)
+        with warnings.catch_warnings():
+            warnings.simplefilter('ignore')
+            model.fit(X_shuf, y_shuf)
 
         # Record training loss
         if hasattr(model, 'loss_curve_') and len(model.loss_curve_) > 0:
