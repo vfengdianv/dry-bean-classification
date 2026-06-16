@@ -20,7 +20,9 @@ Thumbs.db
 # Outputs (reproducible by running main.py)
 outputs/
 
+# Word documents (keep repo lightweight)
+*.docx
+generate_docx.py
+
 # Secrets / local overrides
 *.local.yaml
-
-# Data files are tracked in data/ — do NOT ignore
