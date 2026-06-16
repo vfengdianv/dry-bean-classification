@@ -253,6 +253,10 @@ XGBoost 的 gain-based 特征重要性揭示了最具判别力的特征：
 ```
 dry-bean-classification/
 ├── configs/              # YAML 实验配置（4个）
+├── data/                 # 原始数据集（3个CSV）
+│   ├── Dry_Bean_Dataset_Dirty_train.csv
+│   ├── Dry_Bean_Dataset_Dirty_test.csv
+│   └── Dry_Bean_Dataset_Dirty_val.csv
 ├── src/
 │   ├── data_loader.py    # 数据加载 + BOM修复
 │   ├── label_mapping.py  # 24键穷举标签映射表
@@ -264,6 +268,7 @@ dry-bean-classification/
 │   └── visualize.py      # 14种图表生成
 ├── main.py               # 命令行入口
 ├── requirements.txt
+├── paper.md              # 课程论文
 ├── README.md
 └── outputs/              # 自动生成（图表+CSV表格）
 ```

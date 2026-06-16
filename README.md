@@ -90,6 +90,7 @@
 ```
 dry-bean-classification/
 ├── 📁 configs/                  YAML 配置（4个实验场景）
+├── 📁 data/                     原始数据集（3个CSV，含污染）
 ├── 📁 src/
 │   ├── data_loader.py           CSV→DataFrame + BOM修复
 │   ├── label_mapping.py         24键穷举标签映射表
