@@ -1,0 +1,26 @@
+experiment:
+  name: noise_label
+  description: Label flip noise on training set only — randomly reassigns a fraction of labels
+
+data:
+  train_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_train.csv
+  test_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_test.csv
+  val_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_val.csv
+
+algorithms:
+  - knn
+  - svm
+  - mlp
+  - xgb
+
+noise:
+  type: label_flip
+  levels: [0.10, 0.20, 0.30]
+
+class_balance:
+  strategy: weighted
+
+output:
+  dir: outputs/noise_label
+
+random_seed: 42

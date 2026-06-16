@@ -1,0 +1,26 @@
+experiment:
+  name: noise_missing
+  description: Feature missing (random mask → mean impute) on training set only
+
+data:
+  train_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_train.csv
+  test_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_test.csv
+  val_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_val.csv
+
+algorithms:
+  - knn
+  - svm
+  - mlp
+  - xgb
+
+noise:
+  type: feature_missing
+  levels: [0.10, 0.20, 0.30]
+
+class_balance:
+  strategy: weighted
+
+output:
+  dir: outputs/noise_missing
+
+random_seed: 42

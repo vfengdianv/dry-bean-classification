@@ -1,0 +1,26 @@
+experiment:
+  name: noise_gaussian
+  description: Gaussian additive noise on training features only — tests feature-noise robustness
+
+data:
+  train_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_train.csv
+  test_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_test.csv
+  val_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_val.csv
+
+algorithms:
+  - knn
+  - svm
+  - mlp
+  - xgb
+
+noise:
+  type: gaussian
+  levels: [0.05, 0.15, 0.30]
+
+class_balance:
+  strategy: weighted
+
+output:
+  dir: outputs/noise_gaussian
+
+random_seed: 42

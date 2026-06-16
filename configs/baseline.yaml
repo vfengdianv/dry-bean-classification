@@ -1,0 +1,31 @@
+experiment:
+  name: baseline
+  description: Baseline experiment without noise — all 4 algorithms on clean data
+
+data:
+  train_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_train.csv
+  test_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_test.csv
+  val_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_val.csv
+
+algorithms:
+  - knn
+  - svm
+  - mlp
+  - xgb
+
+noise:
+  type: null
+  level: 0.0
+
+class_balance:
+  strategy: weighted
+  description: >
+    KNN: weights='distance';
+    SVM: class_weight='balanced';
+    MLP: sample_weight via compute_sample_weight('balanced');
+    XGBoost: sample_weight via compute_sample_weight('balanced')
+
+output:
+  dir: outputs/baseline
+
+random_seed: 42
