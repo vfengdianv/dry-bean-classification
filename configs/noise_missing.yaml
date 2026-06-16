@@ -3,9 +3,9 @@ experiment:
   description: Feature missing (random mask → mean impute) on training set only
 
 data:
-  train_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_train.csv
-  test_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_test.csv
-  val_path: ../DryBeanDataset/Dry_Bean_Dataset_Dirty_val.csv
+  train_path: data/Dry_Bean_Dataset_Dirty_train.csv
+  test_path: data/Dry_Bean_Dataset_Dirty_test.csv
+  val_path: data/Dry_Bean_Dataset_Dirty_val.csv
 
 algorithms:
   - knn

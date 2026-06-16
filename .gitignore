@@ -22,3 +22,5 @@ outputs/
 
 # Secrets / local overrides
 *.local.yaml
+
+# Data files are tracked in data/ — do NOT ignore
