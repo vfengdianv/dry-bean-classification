@@ -105,7 +105,6 @@ dry-bean-classification/
 │   ├── evaluate.py              10维度评估指标
 │   └── visualize.py             14种图表 (plt.savefig)
 ├── main.py                      🚀 命令行入口
-├── paper.md                     📝 课程论文
 ├── requirements.txt
 ├── README.md
 └── outputs/                     🖼️ 自动生成（图表+CSV）
@@ -249,7 +248,7 @@ python main.py --config configs/baseline.yaml --output_dir outputs/custom
 
 <div align="center">
 
-**[📝 课程论文](paper.md)** &nbsp;|&nbsp; **[🚀 一键运行](#-快速开始)** &nbsp;|&nbsp; **[📦 GitHub](https://github.com/<username>/dry-bean-classification)**
+**[🚀 一键运行](#-快速开始)** &nbsp;|&nbsp; **[📦 GitHub](https://github.com/vfengdianv/dry-bean-classification)**
 
 *Made with ❤️ for Machine Learning Course Project*
 
